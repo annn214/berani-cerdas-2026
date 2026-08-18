@@ -1,0 +1,390 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e9edf3;
+    font-family: Arial, sans-serif;
+    color: #172033;
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+}
+
+/* PAMFLET */
+
+.pamflet img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* DAFTAR */
+
+.daftar {
+    text-align: center;
+    padding: 40px 20px 30px;
+}
+
+.daftar p {
+    max-width: 750px;
+    margin: 0 auto 22px;
+    color: #39465a;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.tombol {
+    border: 0;
+    border-radius: 6px;
+    padding: 15px 50px;
+
+    background: #063b8f;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.tombol:hover {
+    background: #052f73;
+}
+
+
+/* STATISTIK */
+
+.stats {
+    max-width: 850px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 15px 20px;
+
+    color: #687386;
+    font-size: 12px;
+}
+
+
+/* MENU */
+
+.menu {
+    max-width: 850px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid #063b8f;
+    border-bottom: 1px solid #063b8f;
+}
+
+.menu div {
+    padding: 11px;
+    text-align: center;
+
+    color: #063b8f;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* KOMENTAR */
+
+.comments {
+    max-width: 850px;
+    margin: auto;
+    padding: 30px 20px 40px;
+}
+
+.comment {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #063b8f;
+    color: white;
+    font-weight: bold;
+}
+
+.bubble {
+    display: inline-block;
+    max-width: 650px;
+
+    padding: 10px 14px;
+
+    background: #f1f4f8;
+    border-radius: 16px;
+}
+
+.nama {
+    color: #063b8f;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.teks {
+    color: #263246;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.aksi {
+    margin: 5px 0 0 10px;
+    color: #7a8494;
+    font-size: 10px;
+}
+
+
+/* INPUT KOMENTAR */
+
+.input-komentar {
+    width: 100%;
+    padding: 12px 15px;
+
+    border: 0;
+    outline: 0;
+
+    background: #f1f4f8;
+    border-radius: 22px;
+
+    font-size: 13px;
+}
+
+
+/* COUNTER */
+
+.counter {
+    padding: 38px 20px;
+
+    background: #063b8f;
+    color: white;
+
+    text-align: center;
+}
+
+.counter h2 {
+    color: #ffc928;
+    font-size: 45px;
+}
+
+.counter p {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 25px 20px;
+    text-align: center;
+
+    color: #7b8492;
+    font-size: 11px;
+}
+
+
+/* =========================
+   POPUP FORM
+========================= */
+
+.popup {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.popup.show {
+    display: flex;
+}
+
+.popup-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 420px;
+
+    background: white;
+
+    border-radius: 9px;
+
+    padding: 30px;
+}
+
+.popup-box h2 {
+    color: #063b8f;
+    margin-bottom: 10px;
+}
+
+.popup-box p {
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.popup-box label {
+    display: block;
+
+    margin: 13px 0 6px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.popup-box input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccd3dd;
+    border-radius: 5px;
+
+    outline: none;
+}
+
+.popup-box input:focus {
+    border-color: #063b8f;
+}
+
+.lanjutkan {
+    width: 100%;
+
+    margin-top: 20px;
+    padding: 13px;
+
+    border: 0;
+    border-radius: 5px;
+
+    background: #063b8f;
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.tutup {
+    position: absolute;
+
+    top: 8px;
+    right: 14px;
+
+    border: 0;
+    background: transparent;
+
+    color: #777;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* PESAN SIMULASI */
+
+.hasil {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #eef5ff;
+    border-radius: 6px;
+
+    color: #063b8f;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.hasil.show {
+    display: block;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        background: #fff;
+    }
+
+    .daftar {
+        padding: 30px 15px;
+    }
+
+    .daftar p {
+        font-size: 14px;
+    }
+
+    .tombol {
+        width: 90%;
+        max-width: 350px;
+        padding: 14px;
+    }
+
+    .stats {
+        padding: 12px 10px;
+        font-size: 10px;
+    }
+
+    .menu {
+        margin: 0 10px;
+    }
+
+    .comments {
+        padding: 25px 10px 35px;
+    }
+
+    .teks {
+        font-size: 12px;
+    }
+
+    .bubble {
+        max-width: calc(100vw - 70px);
+    }
+
+    .counter h2 {
+        font-size: 38px;
+    }
+
+    .popup-box {
+        padding: 25px 20px;
+    }
+}

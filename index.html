@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Beasiswa Berani Cerdas 2026</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="page">
+
+    <div class="pamflet">
+        <img
+            src="pamflet.png"
+            alt="Beasiswa Berani Cerdas 2026"
+        >
+    </div>
+
+    <section class="daftar">
+
+        <p>
+            Klik tombol di bawah untuk melanjutkan
+            proses pendaftaran Beasiswa Berani Cerdas 2026.
+        </p>
+
+        <button
+            class="tombol"
+            onclick="bukaPopup()"
+        >
+            DAFTAR SEKARANG
+        </button>
+
+    </section>
+
+    <div class="stats">
+
+        <span>👍 ❤️ 12,8K</span>
+
+        <span>
+            3,2K komentar · 1,8K dibagikan
+        </span>
+
+    </div>
+
+    <div class="menu">
+
+        <div>Like</div>
+        <div>Komentar</div>
+        <div>Bagikan</div>
+
+    </div>
+
+    <section class="comments">
+        <div class="comment">
+            <div class="avatar">R</div>
+
+            <div>
+                <div class="bubble">
+
+                    <div class="nama">
+                        Rizky Pratama
+                    </div>
+
+                    <div class="teks">
+                        Awalnya saya ragu, tapi ternyata
+                        informasinya sangat menarik!
+                    </div>
+
+                </div>
+
+                <div class="aksi">
+                    17m · Suka · Balas
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="comment">
+
+            <div class="avatar">N</div>
+
+            <div>
+
+                <div class="bubble">
+
+                    <div class="nama">
+                        Nur Aisyah
+                    </div>
+
+                    <div class="teks">
+                        Baru lihat informasinya.
+                        Semoga bisa membantu banyak pelajar 👍
+                    </div>
+
+                </div>
+
+                <div class="aksi">
+                    18m · Suka · Balas
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="comment">
+
+            <div class="avatar">S</div>
+
+            <div>
+
+                <div class="bubble">
+
+                    <div class="nama">
+                        Siti Rahmawati
+                    </div>
+
+                    <div class="teks">
+                        Menarik sekali informasinya 😍
+                    </div>
+
+                </div>
+
+                <div class="aksi">
+                    19m · Suka · Balas
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="comment">
+
+            <div class="avatar">P</div>
+
+            <div>
+
+                <div class="bubble">
+
+                    <div class="nama">
+                        Putri Maharani
+                    </div>
+
+                    <div class="teks">
+                        Semoga semakin banyak generasi
+                        muda mendapatkan kesempatan
+                        pendidikan 💙
+                    </div>
+
+                </div>
+
+                <div class="aksi">
+                    5m · Suka · Balas
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <input
+            class="input-komentar"
+            type="text"
+            placeholder="Tulis komentar ..."
+        >
+
+    </section>
+
+    <section class="counter">
+
+        <h2>6.284</h2>
+
+        <p>
+            pengguna yang telah mendaftar Beasiswa Berani Cerdas 2026
+        </p>
+
+    </section>
+
+</div>
+
+
+<div
+    class="popup"
+    id="popup"
+>
+
+    <div class="popup-box">
+
+        <button
+            class="tutup"
+            onclick="tutupPopup()"
+        >
+            ×
+        </button>
+
+        <h2>
+            Pendaftaran Beasiswa
+        </h2>
+
+        <p>
+            Silakan masukkan email dan password
+            untuk melanjutkan proses pendaftaran.
+        </p>
+
+
+        <form onsubmit="simulasi(event)">
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                id="email"
+                type="email"
+                placeholder="Masukkan email"
+                required
+            >
+
+
+            <label for="password">
+                Password
+            </label>
+
+            <input
+                id="password"
+                type="password"
+                placeholder="Masukkan password"
+                required
+            >
+
+
+            <button
+                class="lanjutkan"
+                type="submit"
+            >
+                LANJUTKAN PENDAFTARAN
+            </button>
+
+        </form>
+
+
+        <div
+            class="hasil"
+            id="hasil"
+        >
+            <strong>SIMULASI PHISHING</strong><br>
+            Ini adalah simulasi edukasi keamanan digital.
+            Data yang dimasukkan tidak dikirim atau disimpan.
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
