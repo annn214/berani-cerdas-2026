@@ -4,24 +4,11 @@
   "description": "Aplikasi Pendaftaran Berani Cerdas 2026",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/annn214/berani-cerdas-2026.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/annn214/berani-cerdas-2026/issues"
-  },
-  "homepage": "https://github.com/annn214/berani-cerdas-2026#readme",
   "dependencies": {
-    "cors": "^2.8.6",
-    "express": "^5.2.1",
-    "sqlite3": "^6.0.1"
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
   }
 }

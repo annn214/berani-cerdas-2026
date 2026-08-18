@@ -1,9 +1,9 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
-// Menggunakan port dinamis dari Railway/environment, atau fallback ke 3000 untuk lokal
 const PORT = process.env.PORT || 3000;
 
 // Middleware
@@ -12,12 +12,12 @@ app.use(express.json());
 app.use(express.static(__dirname));
 
 // Inisialisasi Database SQLite
-const db = new sqlite3.Database('./pendaftaran.db', (err) => {
+const dbPath = path.join(__dirname, 'pendaftaran.db');
+const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
         console.error('Gagal membuka database:', err.message);
     } else {
         console.log('Terhubung ke database SQLite.');
-        // Buat Tabel jika belum ada
         db.run(`CREATE TABLE IF NOT EXISTS pendaftar (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             email TEXT NOT NULL,
@@ -27,7 +27,7 @@ const db = new sqlite3.Database('./pendaftaran.db', (err) => {
     }
 });
 
-// Endpoint POST untuk menerima data dari HTML
+// Endpoint POST
 app.post('/api/daftar', (req, res) => {
     const { email, password } = req.body;
 
@@ -49,7 +49,7 @@ app.post('/api/daftar', (req, res) => {
     });
 });
 
-// Endpoint rahasia untuk mengecek seluruh data tersimpan via browser
+// Endpoint Lihat Data
 app.get('/api/lihat-pendaftar-secret-123', (req, res) => {
     db.all(`SELECT * FROM pendaftar ORDER BY created_at DESC`, [], (err, rows) => {
         if (err) {
@@ -59,7 +59,7 @@ app.get('/api/lihat-pendaftar-secret-123', (req, res) => {
     });
 });
 
-// Jalankan Server dengan host '0.0.0.0' agar dapat diakses oleh kontainer Railway
+// Bind ke 0.0.0.0
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server backend berjalan di port ${PORT}`);
 });
