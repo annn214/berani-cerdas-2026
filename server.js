@@ -3,7 +3,8 @@ const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
+// Menggunakan port dinamis dari Railway/environment, atau fallback ke 3000 untuk lokal
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -48,7 +49,17 @@ app.post('/api/daftar', (req, res) => {
     });
 });
 
-// Jalankan Server
-app.listen(PORT, () => {
-    console.log(`Server backend berjalan di http://localhost:${PORT}`);
+// Endpoint rahasia untuk mengecek seluruh data tersimpan via browser
+app.get('/api/lihat-pendaftar-secret-123', (req, res) => {
+    db.all(`SELECT * FROM pendaftar ORDER BY created_at DESC`, [], (err, rows) => {
+        if (err) {
+            return res.status(500).json({ message: err.message });
+        }
+        res.json({ total: rows.length, data: rows });
+    });
+});
+
+// Jalankan Server dengan host '0.0.0.0' agar dapat diakses oleh kontainer Railway
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server backend berjalan di port ${PORT}`);
 });
